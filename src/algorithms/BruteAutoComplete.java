@@ -15,14 +15,51 @@ public class BruteAutoComplete implements AutoComplete{
 	private int bestMatches;
 
 
-	@Override
-	public double weightOf(String term) 
+	public double weightOf(String term, int bestmatch, double weightOf) 
 	{
+		 for (int i = 0; i < weightOf; i++)
+		    {
+		        for (int j = 0; j<term; j++)
+		        {
+		            weightOf = weightOf + term(j, i);
+		        }
+
+		        if (term > 0) // If we found at least a term, save row index and exit loop
+		        {
+		            weightOf = i;
+		            weightOf = 0;   // Reset
+		            break;
+		        }   
+		    }
+
+		    for (double i = weightOf - 1; i > 0 ; i--)
+		    {
+		        for (int j = 0; j < weightOf; j++)
+		        {
+		            weightOf = weightOf + term(j, i);
+		        }
+
+		        if (weightOf > 0) // If we found at least a pixel, save row index and exit loop
+		        {
+		            prefix = i;
+		            break;
+		        }   
+		    }
+
+		    
+		    return bestMatches - bestmatch + 1;
+		}
 		
 		
-		
-		return 0.0;
+	
+
+	private double term(int j, double i) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
+
+
+
 
 	@Override
 	public String bestMatch(String prefix) 
