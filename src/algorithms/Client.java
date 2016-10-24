@@ -2,6 +2,7 @@ package algorithms;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -31,13 +32,16 @@ public class Client {
 	 * ie.baizoukou.bs2.assess1.AutoComplete#getSubstringList(java.lang.
 	 * String)
 	 */
-	public static void main(String[]args)
+	public static void main(String[]args) throws FileNotFoundException
+	
+	
 	{
+		TermList list = new TermList("./data/userdata.txt");
 		Scanner user_input = new Scanner(System.in);
-		System.out.println("Enter word");
+		System.out.println("Enter a prefix");
 		String input = user_input.nextLine();
 		//int k;
-		BruteAutoComplete b = new BruteAutoComplete();
+		BruteAutoComplete b = new BruteAutoComplete(list);
 		
 		System.out.println(b.weightOf(input));
 		b.bestMatch(input);
