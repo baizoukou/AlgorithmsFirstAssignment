@@ -30,8 +30,9 @@ public class BruteAutoComplete implements AutoComplete {
 			}
 		}
 
-			return filtered;
-		}
+			return filtered;// return filtered list
+		} 
+
 
 	public double weightOf(String term, int bestmatch, double weightOf) {
 		return weightOf;
