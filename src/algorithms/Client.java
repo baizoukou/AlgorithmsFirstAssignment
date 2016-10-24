@@ -41,14 +41,13 @@ public class Client {
 		System.out.println("Enter a prefix");
 		String input = user_input.nextLine();
 		//int k;
-		BruteAutoComplete b = new BruteAutoComplete(list);
+		BruteAutoComplete b = new BruteAutoComplete(list.getTerm());
 		
-		System.out.println(b.weightOf(input));
-		b.bestMatch(input);
+		System.out.println(b.weightOf(input));//print weight of
+		System.out.println(b.bestMatch(input));//print best match
 		//b.bestMatch(user_input);
 	}
-	//System.out.println("Word is :"+" " +"prefix"+ " " + "weight" + "bestmatch"+ " " + "bestMatches");
-
+	
 
 
 }

@@ -19,12 +19,18 @@ public class TermList implements List<Term>
 
 
 	private String url = "./data/userdata.txt";
+	
+	private ArrayList<Term>term = new ArrayList<Term>();
+
+	public ArrayList<Term> getTerm() {
+		return term;
+	}
 
 	// Term constructor and Setters and Getters
 	public TermList (String urlString) throws FileNotFoundException
 	{
 
-		ArrayList<Term>term = new ArrayList<Term>();
+		
 		BufferedReader in = null;
 		File usersFile = new File(url);
 		Scanner inUsers = new Scanner(usersFile);
