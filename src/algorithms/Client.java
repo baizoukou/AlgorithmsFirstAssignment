@@ -36,17 +36,25 @@ public class Client {
 	
 	
 	{
+		
 		TermList list = new TermList("./data/userdata.txt");
 		Scanner user_input = new Scanner(System.in);
 		System.out.println("Enter a prefix");
-		String input = user_input.nextLine();
+		String input1 = user_input.nextLine();
 		//int k;
 		BruteAutoComplete b = new BruteAutoComplete(list.getTerm());
 		
-		System.out.println(b.weightOf(input));//print weight of
-		System.out.println(b.bestMatch(input));//print best match
-		//b.bestMatch(user_input);
-	}
+		//System.out.println(b.bestMatch(input));//print best match
+		
+		//System.out.println(b.weightOf(input));//print weight of
+	
+		
+		System.out.println("Enter a Number");
+		int input2 = user_input.nextInt();
+		
+		System.out.println("Best Match Prefix is:" + b.matches(input1, input2));		
+		
+		}
 	
 
 

@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class BruteAutoCompleteTest {
+public class ListOfkMatchesTest {
 
 	@Test
 	public void test() {

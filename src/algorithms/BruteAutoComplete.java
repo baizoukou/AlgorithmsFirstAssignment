@@ -22,15 +22,21 @@ public class BruteAutoComplete implements AutoComplete {
 
 	public Iterable<String> matches(String prefix, int k)
 	{
+		
 		List <String> filtered = new ArrayList<String>(); //filtered prefix from word enter and get the word from term class
-		for (Term t: term)
+		int matches=0;
+		for (Term t: term  )
 		{
-			if (((Term) t).getWord().startsWith(prefix)){
+			if (((Term) t).getWord().startsWith(prefix) && matches++ < k){// initialize counter to 0
 				filtered.add( t.getWord());
+				bestMatches ++;
 			}
+
+			
 		}
 
 			return filtered;// return filtered list
+		    //bestMatches++;
 		} 
 
 
