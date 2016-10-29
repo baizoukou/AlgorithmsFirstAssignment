@@ -1,6 +1,6 @@
 package algorithms;
 
-public class Term 
+public class Term implements Comparable<Term>
 {
 	
 	String word;
@@ -18,6 +18,12 @@ public class Term
 	{
 		this.word = word;
 		this.weightOf = weightOf;
+	}
+
+	@Override
+	public int compareTo(Term t) {
+		// TODO Auto-generated method stub
+		return Double.compare(t.getWeightOf(), weightOf); // compare based on weight
 	}
 
 }
