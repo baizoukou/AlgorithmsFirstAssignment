@@ -9,9 +9,8 @@ import java.util.Scanner;
 
 public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoComplete {
 
-	// public double weight = 0;
+	
 	private List<Term> term;
-	// private int bestMatches;
 	public Object prefix;
 	private int bestMatches;
 
@@ -51,14 +50,14 @@ public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoCom
 		return matches(prefix, 1).iterator().next();//call the other method
 	}
 
+	@Override
+	public  double weightOf(String term) {
 	
-	public double weightOf(String term) {
-		List <Term> filtered = new ArrayList<Term>();
-		for (Term t :  Term ){
+		for (Term t :  term){
 			if (t.getWord().equals(term)){
 				return t.getWeightOf();
 			}
-			else 
+			
 				return 0;
 		}
 			

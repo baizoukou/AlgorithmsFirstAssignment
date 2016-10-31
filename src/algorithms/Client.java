@@ -52,7 +52,7 @@ public class Client {
 		System.out.println("Enter a Number");
 		int input2 = user_input.nextInt();
 		
-		System.out.println("Best Prefix Match  is:" + b.matches(input1 , input2 ));		
+		System.out.println("Best Prefix Match  is:"  + b.matches(input1 , input2 ) );		
 		
 		}
 	
