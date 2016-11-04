@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
 
-import org.junit.rules.ExpectedException;
+
 
 public class TermList implements List<Term>
 {
@@ -20,7 +20,7 @@ public class TermList implements List<Term>
 
 	private String url = "./data/userdata.txt";
 	
-	private ArrayList<Term>term = new ArrayList<Term>();
+	public ArrayList<Term>term = new ArrayList<Term>();
 
 	public ArrayList<Term> getTerm() {
 		return term;
@@ -44,7 +44,7 @@ public class TermList implements List<Term>
 
 			// output user data to console.
 			if (userTokens.length == 2) {
-				term.add(new Term(Double.parseDouble(userTokens[0]), userTokens[1]));
+				term.add(new Term(Long.parseLong(userTokens[0]), userTokens[1]));
 				//System.out.println(" " + userTokens[0] + ": " + userTokens[1]);
 
 			}else
@@ -195,6 +195,16 @@ public class TermList implements List<Term>
 	public <T> T[] toArray(T[] a) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public static int Matches(double d) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public static double Matches1(double d) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

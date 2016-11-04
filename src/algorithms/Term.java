@@ -9,10 +9,10 @@ public class Term implements Comparable<Term>
 	}
 
 	public double getWeightOf() {
-		return weightOf;
+		return  weightOf;
 	}
 
-	double weightOf;
+	double weightOf;// had issue here when putting weightOf as static 
 	
 	public Term (double weightOf, String word)
 	{
