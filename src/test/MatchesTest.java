@@ -27,7 +27,6 @@ public class MatchesTest<Matches> {
 			assertEquals(weightOf2, prefix );
 			
 			
-			
-		
+	
 	    }
 	}

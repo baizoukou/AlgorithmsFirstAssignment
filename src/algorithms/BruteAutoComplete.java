@@ -38,6 +38,7 @@ public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoCom
 			
 		}
 		//return word with it weight
+		// for this piece of code I got help from the Math center
             Collections.sort(filtered);
             List<String> result = new ArrayList <String>();
             String weightOf_and_word = "";
@@ -50,7 +51,11 @@ public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoCom
 				result.add(weightOf_and_word);//sort by  weightOf and word
 				// then returns the weight of the term, or 0.0 if no such term.
 			}
-            return result.subList(0, k);// return top list 
+			if (result.size() > k){
+				return result.subList(0, k);// return top list 
+			}else{
+				return result;// return empty array if prefix not in term
+			}
 			
 		    
 		} 
@@ -69,8 +74,9 @@ public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoCom
 			if (t.getWord().equals(prefix)){
 				return t.getWeightOf();
 			}
+			
 		}
-		return 0.0;	
+			return 0.0;
 	}
 
 	@Override

@@ -41,18 +41,10 @@ public class Client {
 		Scanner user_input = new Scanner(System.in);
 		System.out.println("Enter a prefix");
 		String input1 = user_input.nextLine();
-		//int k;
 		BruteAutoComplete b = new BruteAutoComplete(list.getTerm());
-		
-		//System.out.println(b.bestMatch(input));//print best match
-		
-		//System.out.println(b.weightOf(input));//print weight of
-	
-		
 		System.out.println("Enter a Number");
 		int input2 = user_input.nextInt();
-		
-		System.out.println("Best Prefix Matches  are:"  + b.matches(input1 , input2 ) );		
+		System.out.println("Best Prefix Matches & Top k based on User input are:"  + b.matches(input1 , input2 ) );		
 		
 		}
 	

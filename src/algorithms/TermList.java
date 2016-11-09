@@ -54,6 +54,7 @@ public class TermList implements List<Term>
 			}
 		}
 		inUsers.close();
+		 Collections.sort(term, new TermComparator());
 		Collections.shuffle(term);
 		System.out.println(term.toString());
 
