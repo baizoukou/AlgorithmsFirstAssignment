@@ -1,5 +1,8 @@
 package algorithms;
 import java.util.Scanner;
+
+import edu.princeton.cs.introcs.Stopwatch;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,12 +45,28 @@ public class Client {
 		Scanner user_input = new Scanner(System.in);
 		System.out.println("Enter a prefix");
 		String input1 = user_input.nextLine();
-		BruteAutoComplete b = new BruteAutoComplete(list.getTerm());
-		System.out.println("Enter a Number");
-		int input2 = user_input.nextInt();
-		System.out.println("Best Prefix Matches & Top k based on User input are:"  + b.matches(input1 , input2 ) );		
 		
+		BruteAutoComplete b = new BruteAutoComplete(list.getTerm());
+		
+		System.out.println("Enter a Number");
+		try {// when decimal enter try and catch and send exception to user
+		int input2 = user_input.nextInt();
+		Stopwatch stopwatch=new Stopwatch();
+		System.out.println("Best Prefix Matches & Top k based on User input are:"  + b.matches(input1 , input2 ) );		
+		double   time = stopwatch.elapsedTime();
+		System.out.println("elapsed time" + time);
+		
+		} catch (InputMismatchException e) {
+			
+			System.err.println("Wrong input");
 		}
+		//checking the running time
+		
+			
+			
+			
+		}
+		
 	
 
 

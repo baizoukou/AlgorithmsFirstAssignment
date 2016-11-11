@@ -6,6 +6,9 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import edu.princeton.cs.introcs.Stopwatch;
+
+
 
 public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoComplete {
 
@@ -49,7 +52,7 @@ public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoCom
 				result.add(weightOf_and_word);//sort by  weightOf and word
 				// then returns the weight of the term, or 0.0 if no such term.
 			}
-			if (result.size() > k){
+			if (result.size() > k  && k>=0 ){//check if number is greater than 0 and if its greater or equal 0
 				return result.subList(0, k);// return top list 
 			}else{
 				return result;// return empty array if prefix not in term
@@ -74,11 +77,12 @@ public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoCom
 		}
 			return 0.0;
 	}
-
+	
 	@Override
 	public Iterable<String> matches(String prefix, String string) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 
 }

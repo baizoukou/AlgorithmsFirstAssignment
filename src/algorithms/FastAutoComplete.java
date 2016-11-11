@@ -7,6 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import edu.princeton.cs.introcs.Stopwatch;
+
 public class FastAutoComplete implements Comparable {
 
 	public static boolean contains(int[] a, double weightOf) {
@@ -25,10 +27,7 @@ public class FastAutoComplete implements Comparable {
 		int index = Collections.binarySearch(term, new Term(0, prefix), new TermComparator());
 
 		// if index negative
-		index = - index - 1;// return exact prefix 		
-
-		//return null;// return null if wrong input enter 
-
+		index = - index - 1;// return exact number of the prefix string		
 
 		List<Term> filtered = new ArrayList<Term>();
 
@@ -43,9 +42,10 @@ public class FastAutoComplete implements Comparable {
 			result.add(t.getWord());
 
 		}
-		if (result.size() > k){
+		if  (result.size() > k  && k>=0){
 			return result.subList(0, k);// return top list 
-		}else{
+		}else {
+		
 			return result;// return empty array if prefix not in term
 		}
 	}
@@ -66,11 +66,14 @@ public class FastAutoComplete implements Comparable {
 					return 0;
 				}
 		}
+		
+		
 
 	@Override
 	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
 
 }
