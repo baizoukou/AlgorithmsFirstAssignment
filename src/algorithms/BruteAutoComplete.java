@@ -31,16 +31,14 @@ public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoCom
 				//bestMatches ++;
 			}
 			
-			
-				
-			 
+ 
 		//return null;// return null if wrong input enter 
 			
 		}
 		//return word with it weight
 		// for this piece of code I got help from the Math center
             Collections.sort(filtered);
-            List<String> result = new ArrayList <String>();
+            List<String> result = new ArrayList <String>();// store filtered data in result
             String weightOf_and_word = "";
             String this_word = "";
 			for (Term t: filtered){
@@ -59,11 +57,9 @@ public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoCom
 			
 		    
 		} 
-
  		   
 	public String bestMatch(String prefix) {
 		
-
 		return matches(prefix, 1).iterator().next();//call the other method
 	}
 
