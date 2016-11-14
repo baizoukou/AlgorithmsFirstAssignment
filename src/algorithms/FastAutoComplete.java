@@ -67,13 +67,11 @@ public class FastAutoComplete implements Comparable {
 				}
 		}
 		
-		
-
-	@Override
+		@Override
 	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
+	// the predicted running time for fast AutoComplete  is 0.036855235 (logarithmic)
 
 }

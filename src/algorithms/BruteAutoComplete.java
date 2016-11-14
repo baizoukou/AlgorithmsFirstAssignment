@@ -63,7 +63,7 @@ public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoCom
  		   
 	public String bestMatch(String prefix) {
 		
-		return matches(prefix, 1).iterator().next();//call the other method
+		return matches(prefix, 1).iterator().next();//when there is a match it iterate through 
 	}
 
 	@Override
@@ -83,6 +83,6 @@ public class BruteAutoComplete<In, weightOf, prefix, weighOf> implements AutoCom
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+	// The predicted running time for Brute AutoComple is 0.0238(linear) 
 
 }
